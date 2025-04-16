@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Confirmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 rounded-md"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Confirmation Content -->
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-lg mx-auto">
+                <!-- Confirmation Message -->
+                <div class="bg-pink-200 rounded-lg shadow-md p-8 text-center mb-8">
+                    <h2 class="text-xl font-semibold mb-4">CIS 44040 - Masum Parvazy</h2>
+                    <p class="text-gray-700 mb-4">Your syllabus for CIS 44040 has been sent.</p>
+                    <p class="text-gray-700">An email has been sent with your revision.</p>
+                </div>
+
+                <!-- Document Preview -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold">Document Preview</h3>
+                        <i class="fas fa-file-pdf text-red-600 text-2xl"></i>
+                    </div>
+                    <div class="border rounded-lg p-4 bg-gray-50">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E" alt="Document Preview" class="w-full h-32 object-contain">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-center space-x-4">
+                    <a href="dashboard.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition duration-200">Back to Dashboard</a>
+                    <button onclick="window.location.href='index.html'" class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-200">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
