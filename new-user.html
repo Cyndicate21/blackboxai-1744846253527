@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - New User Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 rounded-md"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Registration Form -->
+        <div class="container mx-auto px-4 mt-16">
+            <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-xl font-semibold mb-6">Create your first account below</h2>
+                <form action="dashboard.html">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                            <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex flex-col space-y-4">
+                        <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-md hover:bg-red-700 transition duration-200 text-lg font-medium">Register</button>
+                        <a href="index.html" class="w-full bg-gray-500 text-white py-3 rounded-md hover:bg-gray-600 transition duration-200 text-lg font-medium text-center">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
