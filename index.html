@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 rounded-md"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Login Form -->
+        <div class="container mx-auto px-4 mt-16">
+            <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-xl font-semibold mb-6">Login to your D.A.R.T.S™ Account</h2>
+                <form action="dashboard.html">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Username" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                    </div>
+                    <div class="mb-6">
+                        <input type="password" placeholder="Password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                    </div>
+                    <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition duration-200">Login</button>
+                </form>
+                <div class="mt-6 text-center">
+                    <a href="new-user.html" class="text-red-600 hover:text-red-700">New User?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
