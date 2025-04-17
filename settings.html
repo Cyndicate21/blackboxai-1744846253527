@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg transform -translate-x-full z-[60] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-red-600">Menu</h2>
+                    <button onclick="toggleMenu()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">MAIN</h3>
+                        <ul class="space-y-2">
+                            <li><a href="dashboard.html" class="text-gray-700 hover:text-red-600">Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="text-gray-700 hover:text-red-600">Admin Dashboard</a></li>
+                            <li><a href="action-needed.html" class="text-gray-700 hover:text-red-600">Action Needed</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">DOCUMENTS</h3>
+                        <ul class="space-y-2">
+                            <li><a href="upload.html" class="text-gray-700 hover:text-red-600">Upload Document</a></li>
+                            <li><a href="submitted-documents.html" class="text-gray-700 hover:text-red-600">Submitted Documents</a></li>
+                            <li><a href="revise-document.html" class="text-gray-700 hover:text-red-600">Revise Document</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">USER</h3>
+                        <ul class="space-y-2">
+                            <li><a href="profile.html" class="text-gray-700 hover:text-red-600">Profile</a></li>
+                            <li><a href="settings.html" class="text-gray-700 hover:text-red-600">Settings</a></li>
+                            <li><a href="help.html" class="text-gray-700 hover:text-red-600">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-red-600 hover:text-red-700">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-3xl mx-auto">
+                <!-- Page Title -->
+                <h2 class="text-2xl font-semibold mb-8">Settings</h2>
+
+                <!-- Settings Sections -->
+                <div class="space-y-8">
+                    <!-- Account Settings -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold mb-4">Account Settings</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Notifications</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-red-600 rounded" checked>
+                                        <span class="ml-2">Document Updates</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-red-600 rounded" checked>
+                                        <span class="ml-2">System Notifications</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Language</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Time Zone</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                                    <option>(GMT-05:00) Eastern Time</option>
+                                    <option>(GMT-06:00) Central Time</option>
+                                    <option>(GMT-07:00) Mountain Time</option>
+                                    <option>(GMT-08:00) Pacific Time</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold mb-4">Security</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Current Password</label>
+                                <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
+                                <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
+                                <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                            </div>
+                            <div class="pt-4">
+                                <button class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                                    Change Password
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Display Settings -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold mb-4">Display</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Theme</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="theme" class="form-radio text-red-600" checked>
+                                        <span class="ml-2">Light</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="theme" class="form-radio text-red-600">
+                                        <span class="ml-2">Dark</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Font Size</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
+                                    <option>Small</option>
+                                    <option selected>Medium</option>
+                                    <option>Large</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="admin-dashboard.html" class="bg-gray-500 text-white px-8 py-3 rounded-md hover:bg-gray-600 transition duration-200">
+                        Cancel
+                    </a>
+                    <button class="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-200">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
