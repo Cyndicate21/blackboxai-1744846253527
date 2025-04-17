@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Admin Status Bar -->
+        <div class="bg-gray-800 py-3">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-yellow-500 rounded-full p-2">
+                            <i class="fas fa-user-shield text-gray-800 text-xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h2 class="font-semibold text-lg">Administrator Dashboard</h2>
+                            <p class="text-gray-300 text-sm">Full system access enabled</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-white">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-gray-300"></i>
+                            <span class="text-gray-300">Last login: Today, 9:45 AM</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-user-circle text-xl"></i>
+                            <span>Dr. Johnson</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg -translate-x-full z-50 overflow-y-auto transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-red-600">Menu</h2>
+                    <button onclick="toggleMenu()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">MAIN</h3>
+                        <ul class="space-y-2">
+                            <li><a href="dashboard.html" class="text-gray-700 hover:text-red-600">Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="text-gray-700 hover:text-red-600">Admin Dashboard</a></li>
+                            <li><a href="action-needed.html" class="text-gray-700 hover:text-red-600">Action Needed</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">DOCUMENTS</h3>
+                        <ul class="space-y-2">
+                            <li><a href="upload.html" class="text-gray-700 hover:text-red-600">Upload Document</a></li>
+                            <li><a href="submitted-documents.html" class="text-gray-700 hover:text-red-600">Submitted Documents</a></li>
+                            <li><a href="documents-to-revise.html" class="text-gray-700 hover:text-red-600">Revise Document</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">USER</h3>
+                        <ul class="space-y-2">
+                            <li><a href="profile.html" class="text-gray-700 hover:text-red-600">Profile</a></li>
+                            <li><a href="settings.html" class="text-gray-700 hover:text-red-600">Settings</a></li>
+                            <li><a href="help.html" class="text-gray-700 hover:text-red-600">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-red-600 hover:text-red-700">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Action Status -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold mb-4">Action Status - Incomplete</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span>FIN 34055</span>
+                            <span class="text-yellow-500">Uploaded</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>FIN 34056</span>
+                            <span class="text-red-500">Denied</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>ESO 17845</span>
+                            <span class="text-green-500">Approved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submitted Documents -->
+                <div class="bg-[#f5e6d3] rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold mb-4">Submitted Documents</h3>
+                    <div class="space-y-3">
+                        <a href="document-uploaded.html" class="block hover:bg-[#f0d9c0] p-2 rounded">
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                <span>FIN 34055 - Uploaded</span>
+                            </div>
+                        </a>
+                        <a href="document-denied.html" class="block hover:bg-[#f0d9c0] p-2 rounded">
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                <span>FIN 34056 - Denied</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Needed -->
+                <div class="bg-pink-200 rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold mb-4">Action Needed!</h3>
+                    <div class="space-y-3">
+                        <a href="action-needed.html" class="block hover:bg-pink-300 p-2 rounded">
+                            <div class="flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2 text-red-500"></i>
+                                <span>Review Documents (3)</span>
+                            </div>
+                        </a>
+                        <a href="documents-to-revise.html" class="block hover:bg-pink-300 p-2 rounded">
+                            <div class="flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2 text-red-500"></i>
+                                <span>Revise Documents (2)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex space-x-4">
+                <a href="submitted-documents.html" class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-200">View All Documents</a>
+                <a href="help.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition duration-200">Help</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
