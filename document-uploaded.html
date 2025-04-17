@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Document Uploaded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg -translate-x-full z-50 overflow-y-auto transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-red-600">Menu</h2>
+                    <button onclick="toggleMenu()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">MAIN</h3>
+                        <ul class="space-y-2">
+                            <li><a href="dashboard.html" class="text-gray-700 hover:text-red-600">Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="text-gray-700 hover:text-red-600">Admin Dashboard</a></li>
+                            <li><a href="action-needed.html" class="text-gray-700 hover:text-red-600">Action Needed</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">DOCUMENTS</h3>
+                        <ul class="space-y-2">
+                            <li><a href="upload.html" class="text-gray-700 hover:text-red-600">Upload Document</a></li>
+                            <li><a href="submitted-documents.html" class="text-gray-700 hover:text-red-600">Submitted Documents</a></li>
+                            <li><a href="documents-to-revise.html" class="text-gray-700 hover:text-red-600">Revise Document</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">USER</h3>
+                        <ul class="space-y-2">
+                            <li><a href="profile.html" class="text-gray-700 hover:text-red-600">Profile</a></li>
+                            <li><a href="settings.html" class="text-gray-700 hover:text-red-600">Settings</a></li>
+                            <li><a href="help.html" class="text-gray-700 hover:text-red-600">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-red-600 hover:text-red-700">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Document Status -->
+                <div class="bg-yellow-100 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-2">Document Status: Uploaded</h2>
+                            <p class="text-gray-700">FIN 34055</p>
+                        </div>
+                        <div class="bg-yellow-400 rounded-full p-3">
+                            <i class="fas fa-upload text-yellow-800 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Details -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Document Details</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between border-b pb-4">
+                            <span class="text-gray-600">Document ID</span>
+                            <span class="font-medium">FIN 34055</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-4">
+                            <span class="text-gray-600">Submission Date</span>
+                            <span class="font-medium">April 17, 2025</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-4">
+                            <span class="text-gray-600">Status</span>
+                            <span class="text-yellow-500 font-medium">Uploaded</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Next Action</span>
+                            <span class="font-medium">Pending Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Preview -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold">Document Preview</h3>
+                        <button class="text-red-600 hover:text-red-700">
+                            <i class="fas fa-download mr-2"></i>
+                            Download
+                        </button>
+                    </div>
+                    <div class="border rounded-lg p-4 bg-gray-50">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-gray-600">syllabus_v1.pdf</span>
+                            <i class="fas fa-file-pdf text-red-600 text-xl"></i>
+                        </div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E" alt="Document Preview" class="w-full h-32 object-contain">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-center space-x-4">
+                    <a href="admin-dashboard.html" class="bg-gray-500 text-white px-8 py-3 rounded-md hover:bg-gray-600 transition duration-200">
+                        Back to Dashboard
+                    </a>
+                    <button onclick="window.location.href='action-needed.html'" class="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-200">
+                        Review Document
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
