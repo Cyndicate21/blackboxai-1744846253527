@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Action Needed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg -translate-x-full z-50 overflow-y-auto transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-red-600">Menu</h2>
+                    <button onclick="toggleMenu()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">MAIN</h3>
+                        <ul class="space-y-2">
+                            <li><a href="dashboard.html" class="text-gray-700 hover:text-red-600">Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="text-gray-700 hover:text-red-600">Admin Dashboard</a></li>
+                            <li><a href="action-needed.html" class="text-gray-700 hover:text-red-600">Action Needed</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">DOCUMENTS</h3>
+                        <ul class="space-y-2">
+                            <li><a href="upload.html" class="text-gray-700 hover:text-red-600">Upload Document</a></li>
+                            <li><a href="submitted-documents.html" class="text-gray-700 hover:text-red-600">Submitted Documents</a></li>
+                            <li><a href="documents-to-revise.html" class="text-gray-700 hover:text-red-600">Revise Document</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="border-b pb-4">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-3">USER</h3>
+                        <ul class="space-y-2">
+                            <li><a href="profile.html" class="text-gray-700 hover:text-red-600">Profile</a></li>
+                            <li><a href="settings.html" class="text-gray-700 hover:text-red-600">Settings</a></li>
+                            <li><a href="help.html" class="text-gray-700 hover:text-red-600">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-red-600 hover:text-red-700">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Page Title -->
+                <div class="bg-pink-200 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-2">Action Needed</h2>
+                            <p class="text-gray-700">The following items require your attention.</p>
+                        </div>
+                        <div class="bg-red-100 rounded-full p-3">
+                            <i class="fas fa-exclamation-circle text-red-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-8">
+                    <div class="flex space-x-4">
+                        <button class="px-4 py-2 text-sm font-medium text-red-600 border-b-2 border-red-600" onclick="filterDocuments('all')">
+                            All Documents (6)
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-red-600" onclick="filterDocuments('review')">
+                            Need Review (3)
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-red-600" onclick="filterDocuments('upload')">
+                            Need Upload (1)
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-red-600" onclick="filterDocuments('reminder')">
+                            Send Reminder (2)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Documents List -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                    <!-- Documents Needing Review -->
+                    <div class="border-b p-6 hover:bg-gray-50 document-item review-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-red-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Review Required: FIN 34055</h3>
+                                    <p class="text-gray-600 text-sm">Uploaded by Jane Doe</p>
+                                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-1">Uploaded</span>
+                                </div>
+                            </div>
+                            <a href="review-fin34055.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                                Review Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border-b p-6 hover:bg-gray-50 document-item review-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-red-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Review Required: CIS 44041</h3>
+                                    <p class="text-gray-600 text-sm">Submitted by Masum Parvary</p>
+                                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-1">Uploaded</span>
+                                </div>
+                            </div>
+                            <a href="review-cis44041.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                                Review Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border-b p-6 hover:bg-gray-50 document-item review-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-red-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Review Required: ESO 17845</h3>
+                                    <p class="text-gray-600 text-sm">Submitted by Mike Johnson</p>
+                                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-1">Uploaded</span>
+                                </div>
+                            </div>
+                            <a href="review-eso17845.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                                Review Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Document Upload Required -->
+                    <div class="border-b p-6 hover:bg-gray-50 document-item upload-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-upload text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Upload Required: FIN 34056</h3>
+                                    <p class="text-gray-600 text-sm">Revised syllabus needs to be uploaded</p>
+                                    <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded mt-1">Denied</span>
+                                </div>
+                            </div>
+                            <a href="upload-fin34056.html" class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition duration-200">
+                                Upload
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Reminders Needed -->
+                    <div class="border-b p-6 hover:bg-gray-50 document-item reminder-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-bell text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Send Reminder: CIS 44040</h3>
+                                    <p class="text-gray-600 text-sm">Reminder needed for Greta Polites</p>
+                                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-1">Pending</span>
+                                </div>
+                            </div>
+                            <a href="reminder-cis44040.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">
+                                Send Reminder
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6 hover:bg-gray-50 document-item reminder-doc">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-bell text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Send Reminder: BUS 55023</h3>
+                                    <p class="text-gray-600 text-sm">Reminder needed for Sarah Chen</p>
+                                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-1">Pending</span>
+                                </div>
+                            </div>
+                            <a href="reminder-bus55023.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">
+                                Send Reminder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="text-center">
+                    <a href="admin-dashboard.html" class="inline-block bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-200">
+                        Back to Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterDocuments(type) {
+            const documents = document.querySelectorAll('.document-item');
+            const buttons = document.querySelectorAll('.bg-white.rounded-lg.shadow-md.p-4.mb-8 button');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('text-red-600', 'border-b-2', 'border-red-600');
+                btn.classList.add('text-gray-500');
+            });
+            
+            const activeButton = document.querySelector(`button[onclick="filterDocuments('${type}')"]`);
+            activeButton.classList.remove('text-gray-500');
+            activeButton.classList.add('text-red-600', 'border-b-2', 'border-red-600');
+            
+            documents.forEach(doc => {
+                if (type === 'all') {
+                    doc.style.display = 'block';
+                } else {
+                    if (doc.classList.contains(`${type}-doc`)) {
+                        doc.style.display = 'block';
+                    } else {
+                        doc.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
