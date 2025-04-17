@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Review FIN 34055</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg -translate-x-full z-50 overflow-y-auto transition-transform duration-300">
+            <!-- Navigation content same as other pages -->
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Document Header -->
+                <div class="bg-yellow-100 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-2">Review Document: FIN 34055</h2>
+                            <p class="text-gray-700">Submitted by Jane Doe</p>
+                        </div>
+                        <div class="bg-yellow-400 rounded-full p-3">
+                            <i class="fas fa-file-alt text-yellow-800 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Preview -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-lg font-semibold">Document Preview</h3>
+                        <button class="text-red-600 hover:text-red-700">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Original
+                        </button>
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                        <i class="fas fa-file-pdf text-gray-400 text-5xl mb-4"></i>
+                        <p class="text-gray-600">syllabus_fin34055.pdf</p>
+                    </div>
+                </div>
+
+                <!-- Review Form -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-lg font-semibold mb-6">Review Details</h3>
+                    <form>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Review Status</label>
+                                <select class="w-full border-gray-300 rounded-md shadow-sm focus:border-red-500 focus:ring-red-500">
+                                    <option>Select status...</option>
+                                    <option>Approve</option>
+                                    <option>Deny</option>
+                                    <option>Request Revision</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Comments</label>
+                                <textarea rows="4" class="w-full border-gray-300 rounded-md shadow-sm focus:border-red-500 focus:ring-red-500" placeholder="Enter your review comments..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Additional Requirements</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" class="text-red-600 focus:ring-red-500 rounded">
+                                        <span class="ml-2">Requires department chair approval</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" class="text-red-600 focus:ring-red-500 rounded">
+                                        <span class="ml-2">Needs formatting revision</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" class="text-red-600 focus:ring-red-500 rounded">
+                                        <span class="ml-2">Missing required sections</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-between">
+                    <a href="action-needed.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition duration-200">
+                        Back to Action Needed
+                    </a>
+                    <div class="space-x-4">
+                        <button onclick="window.location.href='document-denied.html'" class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                            Submit Review
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
