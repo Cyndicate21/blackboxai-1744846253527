@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Revise FIN 34056</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200;
+        }
+        .nav-section {
+            @apply mb-6 pb-6 border-b border-gray-200;
+        }
+        .nav-section:last-child {
+            @apply border-b-0 pb-0 mb-0;
+        }
+        .nav-section-title {
+            @apply text-sm font-semibold text-gray-500 mb-3 px-4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4 fixed top-0 left-0 right-0 z-30">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button type="button" id="menu-button" class="z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-all duration-300 ease-in-out">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-40 overflow-y-auto transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-red-600">Menu</h2>
+                    <button type="button" id="close-menu" class="text-gray-500 hover:text-gray-700 focus:outline-none transition-colors duration-200">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav>
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">MAIN</h3>
+                        <ul class="space-y-1">
+                            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="nav-link">Admin Dashboard</a></li>
+                            <li><a href="action-needed.html" class="nav-link">Action Needed</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">DOCUMENTS</h3>
+                        <ul class="space-y-1">
+                            <li><a href="upload.html" class="nav-link">Upload Document</a></li>
+                            <li><a href="submitted-documents.html" class="nav-link">Submitted Documents</a></li>
+                            <li><a href="documents-to-revise.html" class="nav-link">Revise Document</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">USER</h3>
+                        <ul class="space-y-1">
+                            <li><a href="profile.html" class="nav-link">Profile</a></li>
+                            <li><a href="settings.html" class="nav-link">Settings</a></li>
+                            <li><a href="help.html" class="nav-link">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section">
+                        <ul class="space-y-1">
+                            <li><a href="index.html" class="nav-link text-red-600 hover:text-red-700">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Menu Overlay -->
+        <div id="menu-overlay" class="fixed inset-0 z-30 bg-black transition-all duration-300 ease-in-out opacity-0 pointer-events-none">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8 mt-16">
+            <div class="max-w-4xl mx-auto">
+                <!-- Page Title -->
+                <div class="bg-pink-100 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-2">Revise Document: FIN 34056</h2>
+                            <p class="text-gray-700">Submitted by Dr. Sarah Chen</p>
+                        </div>
+                        <div class="bg-red-100 rounded-full p-3">
+                            <i class="fas fa-edit text-red-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revision Comments -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-4">Revision Comments</h3>
+                        
+                        <!-- Comment Item -->
+                        <div class="bg-yellow-50 rounded-lg p-4 mb-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">Missing Required Sections</h4>
+                                <span class="text-sm text-gray-500">2 days ago</span>
+                            </div>
+                            <p class="text-gray-700">Please add the course objectives section to the syllabus.</p>
+                        </div>
+
+                        <!-- Comment Item -->
+                        <div class="bg-yellow-50 rounded-lg p-4 mb-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">Grading Criteria</h4>
+                                <span class="text-sm text-gray-500">2 days ago</span>
+                            </div>
+                            <p class="text-gray-700">The grading criteria needs more detail. Please specify the breakdown of assignments and their weights.</p>
+                        </div>
+
+                        <!-- Comment Item -->
+                        <div class="bg-yellow-50 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">Office Hours Format</h4>
+                                <span class="text-sm text-gray-500">2 days ago</span>
+                            </div>
+                            <p class="text-gray-700">Please include both in-person and virtual office hours options.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-between items-center mb-8">
+                    <a href="documents-to-revise.html" class="inline-flex items-center text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Documents
+                    </a>
+                    <div class="flex space-x-4">
+                        <button class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition duration-200">
+                            Save Draft
+                        </button>
+                        <button class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-200">
+                            Submit Revision
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.getElementById('nav-menu');
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-menu');
+            const overlay = document.getElementById('menu-overlay');
+
+            function openMenu() {
+                menu.classList.remove('-translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                menuButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                menu.classList.add('-translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                menuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                document.body.style.overflow = '';
+            }
+
+            menuButton.addEventListener('click', function() {
+                const isOpen = !menu.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            closeButton.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+
+            // Initialize menu in closed state
+            closeMenu();
+        });
+    </script>
+</body>
+</html>
