@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.S - Send Reminder BUS 55023</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="nav.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-red-600 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="bg-white p-2 rounded-lg transform -skew-x-12">
+                        <h1 class="text-2xl font-bold text-red-600 skew-x-12">D.A.R.T.S</h1>
+                    </div>
+                    <button id="menu-button" onclick="toggleMenu()" class="fixed top-4 right-4 z-50 bg-red-600 text-white text-2xl focus:outline-none p-3 hover:bg-red-700 rounded-lg transition-colors duration-200 shadow-lg">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <div id="nav-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg -translate-x-full z-50 overflow-y-auto transition-transform duration-300">
+            <!-- Navigation content same as other pages -->
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Reminder Header -->
+                <div class="bg-blue-100 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-2">Send Reminder: BUS 55023</h2>
+                            <p class="text-gray-700">Reminder for Dr. Sarah Chen</p>
+                        </div>
+                        <div class="bg-blue-400 rounded-full p-3">
+                            <i class="fas fa-bell text-blue-800 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Details -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Document Details</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b">
+                            <span class="text-gray-600">Course</span>
+                            <span class="font-medium">BUS 55023 - Business Ethics</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b">
+                            <span class="text-gray-600">Due Date</span>
+                            <span class="font-medium text-red-600">Overdue by 3 days</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Previous Reminders</span>
+                            <span class="font-medium">None</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminder Message -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Reminder Message</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" value="Reminder: Syllabus Submission for BUS 55023" class="w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="6" class="w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" readonly>Dear Dr. Chen,
+
+This is a friendly reminder that the syllabus for BUS 55023 - Business Ethics is currently overdue. The submission was due 3 days ago.
+
+Please submit your syllabus at your earliest convenience. If you need any assistance or have questions, please don't hesitate to reach out.
+
+Best regards,
+D.A.R.T.S Administration</textarea>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" class="text-blue-600 focus:ring-blue-500 rounded">
+                            <span class="text-sm text-gray-700">Send me a copy of this reminder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-between">
+                    <a href="action-needed.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition duration-200">
+                        Back to Action Needed
+                    </a>
+                    <button onclick="window.location.href='reminder-sent.html'" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-200">
+                        Send Reminder
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
